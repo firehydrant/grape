@@ -129,7 +129,7 @@ module Grape
           methods = '*' if methods == :any
           endpoint_options = {
             method: methods,
-            path: paths,
+            path: [Array(paths).first],
             for: self,
             route_options: {
               params: namespace_stackable_with_hash(:params) || {}
